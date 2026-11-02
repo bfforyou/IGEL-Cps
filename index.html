@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Little Gift For You ~ Bagus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+
+        <h1>A Little Gift For You</h1>
+
+        <p class="message">
+            Ada sesuatu yang spesial untukmu...
+        </p>
+
+        <div class="gift" onclick="openGift()">
+            🌸
+        </div>
+
+        <p class="instruction">
+            Ketuk kelopak bunga untuk membukanya
+        </p>
+
+    </main>
+
+    <div class="pin-screen hidden" id="pinScreen">
+
+        <div class="pin-box">
+            <h2>Untuk Seseorang Spesial</h2>
+
+            <p>Masukkan kode rahasia kita 🌸</p>
+
+            <div class="pin-dots" id="pinDisplay">
+                ○ ○ ○ ○ ○ ○
+            </div>
+
+            <div class="keypad">
+
+                <button onclick="addDigit('1')">1</button>
+                <button onclick="addDigit('2')">2</button>
+                <button onclick="addDigit('3')">3</button>
+
+                <button onclick="addDigit('4')">4</button>
+                <button onclick="addDigit('5')">5</button>
+                <button onclick="addDigit('6')">6</button>
+                
+                <button onclick="addDigit('7')">7</button>
+                <button onclick="addDigit('8')">8</button>
+                <button onclick="addDigit('9')">9</button>
+                
+                <button onclick="deleteDigit()">⌫</button>
+                <button onclick="addDigit('0')">0</button>
+                <button onclick="checkPIN()">✓</button>
+
+                <p id="pinMessage"></p>
+    
+            </div>
+
+            <p class="pin-hint">
+                Masukkan 6 digit PIN
+            </p>
+        </div>
+
+    </div>
+
+    <div class="gift-screen hidden" id="giftScreen">
+
+        <h2> A Little Surprise For You</h2>
+        <p>Ada hadiah kecil untukmu ❤️</p>
+
+        <div class="gift-box" onclick="openBirthdayGift()">
+            <div class="gift-lid"></div>
+            <div class="gift-body"></div>
+            <div class="gift-ribbon"></div>
+            <div class="gift-bow">
+                <span class="bow-left"></span>
+                <span class="bow-right"></span>
+                <span class="bow-knot"></span>
+            </div>
+            
+        </div>
+
+        <p class="gift-instruction">
+            Ketuk hadiah untuk membukanya 🎁
+        </p>
+    </div>
+
+    <div class="birthday-screen hidden" id="birthdayScreen">
+        <div class="petals" id="petals">
+            <span>🌸</span>
+            <span>🌷</span>
+            <span>🌸</span>
+            <span>🌷</span>
+            <span>🌸</span>
+            <span>🌷</span>
+            <span>🌸</span>
+            <span>🌷</span>
+            <span>🌸</span>
+            <span>🌷</span>
+            <span>🌸</span>
+            <span>🌷</span>
+        </div>
+
+
+        <div class="flowers">
+            🌸 🌷 🌸
+        </div>
+
+        <h1>Happy Birthday! 🎂 </h1>
+
+        <p class="birthday-date">07 Februari 2027</p>
+
+        <div class="birthday-cake">
+            <img
+                src="cake.png"
+                alt="Birthday Cake"
+                class="cake-image"
+            > 
+            
+            <div class="candles-overlay">
+                <button class="candle-flame" onclick="blowOutCandle(this)"><span></span></button>
+                <button class="candle-flame" onclick="blowOutCandle(this)"><span></span></button>
+                <button class="candle-flame" onclick="blowOutCandle(this)"><span></span></button>
+            </div>
+        </div>
+
+        <div class="cake-plate"></div>
+
+        <p class="cake-instruction">
+            klick lilinnya untuk mematikan api 🕯️
+        </p>
+
+        <div class="countdown" id="countdown">
+            Memuat hitung mundur...
+        </div>
+
+        <p>Hari ini adalah hari spesial untukmu ❤️</p>
+
+        <button class="message-button" onclick="openMessage()">
+            Buka Pesan Spesial 💌
+        </button>
+
+        <div class="special-message hidden" id="specialMessage">
+            <h2>Untukmu ❤️</h2>
+            <p>Semoga hari spesialmu dipenuhi kebahagiaan dan hal-hal indah.</p>
+        </div>
+
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

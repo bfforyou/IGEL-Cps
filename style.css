@@ -1,0 +1,585 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #240913;
+    color: white;
+    font-family: Georgia, serif;
+    min-height: 100vh;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+h1 {
+    color: #ffd5df;
+    font-size: 32px;
+}
+
+.message {
+    color: #e8c6cf;
+    font-size: 16px;
+}
+
+.gift {
+    font-size: 100px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.gift:hover {
+    transform: scale(1.2);
+}
+
+.instruction {
+    color: #d9aab8;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.pin-screen {
+    position: fixed;
+    inset: 0;
+    background: #240913;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.pin-screen.hidden {
+    display: none !important;
+}
+
+.pin-box {
+    width: 320px;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 20px;
+    background: #351321;
+}
+
+.pin-box h2 {
+    color: #ffd5df;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.pin-box p {
+    color: #e8c6cf;
+    font-size: 14px;
+}
+
+.pin-dots {
+    margin: 25px 0;
+    color: #ffb6c8;
+    letter-spacing: 5px;
+    font-size: 22px;
+}
+
+.pin-hint {
+    font-style: italic;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 65px);
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.keypad button {
+    width: 65px;
+    height: 55px;
+    border: 1px solid #a65c78;
+    border-radius: 12px;
+    background: #542338;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#pinMessage {
+    grid-column: 1 / -1;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    color: #ffd5df;
+    margin: 12px 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.birthday-screen {
+    position: fixed;
+    inset: 0;
+    background: #240913;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 40px 20px 60px;
+    z-index: 20;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.birthday-screen h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.birthday-screen p {
+    font-size: 18px;
+}
+
+.message-button {
+    margin-top: 25px;
+    padding: 12px 25px;
+    background: #a64d70;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.message-button:hover {
+    background: #d4777d;
+    transform: scale(1.05);
+}
+
+.special-message {
+    margin-top: 25px;
+    padding: 25px;
+    max-width: 350px;
+    background: #542338;
+    border: 1px solid #a65c78;
+    border-radius: 18px;
+    color: white;
+    text-align: center;
+    animation: fadeIn 0.6s ease;
+}
+
+.special-message h2 {
+    margin-top: 0;
+    color: #ffd5df;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.flowers {
+    font-size: 35px;
+    margin-bottom: 20px;
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.petals {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.petals span {
+    position: absolute;
+    top: -50px;
+    font-size: 24px;
+    animation: falling 8s linear infinite;
+}
+
+.petals span:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.petals span:nth-child(2) {
+    left: 25%;
+    animation-delay: 2s;
+}
+
+.petals span:nth-child(3) {
+    left: 45%;
+    animation-delay: 4s;
+}
+
+.petals span:nth-child(4) {
+    left: 65%;
+    animation-delay: 1s;
+}
+
+.petals span:nth-child(5) {
+    left: 80%;
+    animation-delay: 3s;
+}
+
+.petals span:nth-child(6) {
+    left: 90%;
+    animation-delay: 5s;
+}
+
+@keyframes falling {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.birthday-date {
+    color: #ffb6c9;
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.countdown {
+    margin-top: 15px;
+    padding: 15px 20px;
+    background: #542338;
+    border: 1px solid #a65c78;
+    border-radius: 15px;
+    color: #ffd5df;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.gift-screen {
+    position: fixed;
+    inset: 0;
+    background: #240913;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 15;
+    text-align: center;
+}
+
+.gift-screen h2 {
+    color: #ffd5df;
+    margin-bottom: 10px;
+}
+
+.gift-box {
+    position: relative;
+    width: 150px;
+    height: 120px;
+    margin-top: 40px;
+    cursor: pointer;
+    animation: giftShake 2s infinite;
+}
+
+.gift-body {
+    position: absolute;
+    bottom: 0;
+    width: 150px;
+    height: 90px;
+    background: #a64d70;
+    border-radius: 5px;
+}
+
+.gift-lid {
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    width: 170px;
+    height: 30px;
+    background: #d47799;
+    border-radius: 5px;
+    z-index: 4;
+}
+
+.gift-ribbon {
+    position: absolute;
+    top: 10px;
+    left: 60px;
+    width: 30px;
+    height: 110px;
+    background: #c62828;
+    z-index: 3;
+}
+
+.gift-instruction {
+    margin-top: 30px;
+    color: #ffd5df;
+}
+
+@keyframes giftShake {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-4deg);
+    }
+
+    75% {
+        transform: rotate(4deg);
+    }
+}
+
+.gift-bow {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 50px;
+    z-index: 6;
+}
+
+.bow-left,
+.bow-right {
+    position: absolute;
+    top: 5px;
+    width: 43px;
+    height: 30px;
+    background: linear-gradient(135deg, #ff5252, #a80000);
+    border: 2px solid #8e0000;
+}
+
+.bow-left {
+    left: 5px;
+    border-radius: 50% 50% 10% 50%;
+    transform: rotate(25deg);
+}
+
+.bow-right {
+    right: 5px;
+    border-radius: 50% 50% 50% 10%;
+    transform: rotate(-25deg);
+}
+
+.bow-knot {
+    position: absolute;
+    top: 12px;
+    left: 39px;
+    width: 22px;
+    height: 22px;
+    background: linear-gradient(135deg, #ff7777, #b00000);
+    border: 2px solid #8e0000;
+    border-radius: 7px;
+    z-index: 2;
+}
+
+/* Layar ledakan bunga */
+.flower-burst {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.burst-flower {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    animation: flowerBlast 1.5s cubic-bezier(.15,.7,.3,1) forwards;
+    animation-delay: var(--delay);
+}
+
+.burst-flower i {
+    position: absolute;
+    width: 30px;
+    height: 42px;
+    left: 15px;
+    top: -5px;
+    border-radius: 50%;
+    background: var(--flower-color);
+    transform: rotate(var(--angle)) translateY(-12px);
+}
+
+.burst-flower b {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 21px;
+    top: 21px;
+    border-radius: 50%;
+    background: #ffd45c;
+    z-index: 2;
+}
+
+@keyframes flowerBlast {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.1);
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+        transform:
+            translate(
+                calc(-50% + var(--dx)),
+                calc(-50% + var(--dy))
+            )
+            rotate(var(--spin))
+            scale(var(--size));
+    }
+}
+
+.birthday-cake {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 25px auto;
+}
+
+.cake-image {
+    width: 320px;
+    max-width: 90%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.candles-overlay {
+    position: absolute;
+    top: 1%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 26px;
+}
+
+.candle-flame {
+    position: relative;
+    width: 22px;
+    height: 34px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.candle-flame span {
+    display: block;
+    width: 17px;
+    height: 27px;
+    margin: auto;
+    background: radial-gradient(
+        ellipse at 50% 75%,
+        #fffbd0 0%,
+        #ffe45c 35%,
+        #ff941f 70%,
+        #ff4d00 100%
+    );
+    border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
+    clip-path: polygon(50% 0%, 85% 55%, 100% 80%, 75% 100%, 25% 100%, 0% 80%, 15% 55%);
+    box-shadow: 0 0 12px #ff9900;
+    transform-origin: center bottom;
+    animation: flameFlicker 0.8s ease-in-out infinite alternate;
+}
+
+.candle-flame.off span {
+    display: none;
+}
+
+.candle-flame.off::before {
+    opacity: 0;
+    transform: translateX(-50%) rotate(45deg) scale(0);
+}
+
+.candle-flame.off {
+    opacity: 0;
+    transform: rotate(-45deg) scale(0);
+    pointer-events: none;
+}
+
+@keyframes flameFlicker {
+    0% {
+        transform: scale(1) rotate(-4deg);
+        filter: brightness(1);
+    }
+
+    25% {
+        transform: scale(1.08, 0.94) rotate(3deg);
+        filter: brightness(1.15);
+    }
+
+    50% {
+        transform: scale(0.94, 1.08) rotate(-3deg);
+        filter: brightness(1.05);
+    }
+
+    75% {
+        transform: scale(1.06, 0.97) rotate(4deg);
+        filter: brightness(1.2);
+    }
+
+    100% {
+        transform: scale(0.98, 1.05) rotate(-2deg);
+        filter: brightness(1);
+    }
+}
