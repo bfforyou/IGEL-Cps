@@ -165,3 +165,9 @@ function blowOutCandle(button) {
     button.disabled = true;
 }
 
+function changeSong(songId) {
+    const musicFrame = document.getElementById("musicFrame");
+
+    musicFrame.src =
+        "https://www.youtube.com/embed/" + songId + "?autoplay=1";
+}
