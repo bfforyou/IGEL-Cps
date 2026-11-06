@@ -112,6 +112,8 @@
 
         <h1>Happy Birthday! 🎂 </h1>
 
+        <p class="birthday-date">HBD ya my brother si anak bungsu</p>
+
         <p class="birthday-date">07 Februari 2027</p>
 
         <div class="birthday-cake">
@@ -145,8 +147,41 @@
         </button>
 
         <div class="special-message hidden" id="specialMessage">
-            <h2>Untukmu ❤️</h2>
-            <p>Semoga hari spesialmu dipenuhi kebahagiaan dan hal-hal indah.</p>
+            <h2>Dear Future Me, ❤️</h2>
+
+            <p>yo, apa kabar lu sekarang ?</p>
+
+            <p>
+              HBD Brother!!
+              Nggak kerasa ya, sekarang udah gede aja. Rasanya baru kemarin kita masih
+              kecil, main ke sana kemari sambil mikirin "nanti gua dimarahin mama nggak ya?"
+              Ketawa karena hal sederhana, main sampai lupa waktu, dan selalu punya alasanbuat bahagia.
+            </p>
+
+            <p>
+              Dulu kita selalu pengen cepet-cepet jadi gede. Pengen punya banyak uang,
+              punya kehidupan sendiri, dan bebas melakukan apapun yang kita mau.
+            </p>
+
+            <p>
+              kira kira sekarang lo rindu nggak jadi anak kecil lagi? dulu mimpi kita 
+              jadi pemain sepak bola loh, itu cita-cita yang pengen banget lo capai dulu.
+              Apakah sekarang lo udah jadi pemain sepak bola itu?
+            </p>
+
+            <P>
+              berapa sekarang umur lu? semoga lu jadi diri lu sendiri dan bisa jadi kebanggaan
+              buat keluarga ya bro!!
+            </P>
+
+            <P>
+              HBD skali lagi >.<
+            </p>
+
+            <P>
+              Huftt jadi dewasa ku kira menyenangkan. 😔
+            </p>
+            
         </div>
 
         <div class="music-player">
@@ -163,7 +198,7 @@
 
             <div class="playlist-songs">
 
-                <button class="song-item" onclick="changeSong('WGI6pmZshkk')">
+                <button class="song-item" onclick="changeSong('masa-mudaku-habis')">
                     <span>01</span>
                     <div>
                         <h3>Masa Mudaku Habis</h3>
@@ -172,7 +207,7 @@
                     <span>▶</span>
                 </button>
 
-                <button class="song-item" onclick="changeSong('QqJ-Vp8mvbk')">
+                <button class="song-item" onclick="changeSong('monokrom')">
                     <span>02</span>
                     <div>
                         <h3>Monokrom</h3>
@@ -183,18 +218,39 @@
 
             </div>
 
-            <div class="music-video">
-                <iframe
-                    id="musicFrame"
-                    src="https://www.youtube.com/embed/WGI6pmZshkk"
-                    title="Pemutar musik"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allow="autoplay; encrypted-media; picture-in-picture"
-                    allowfullscreen>
-                </iframe>               
+            <audio id="musicAudio" preload="metadata"></audio>
+
+            <div class="now-playing">
+                <p>NOW PLAYING</p>
+                <h3 id="nowPlayingTitle">Belum ada lagu yang diputer</h3>
+                <span id="nowPlayingArtist">Pilih lagu untuk memulai</span>
             </div>
+
+            <div class="music-controls">
+                <button onclick="previousSong()">⏮</button>
+                <button id="playButton" onclick="toggleMusic()">▶</button>
+                <button onclick="nextSong()">⏭</button>
+            </div>
+
+            <div class="music-progress">
+                <div class="progress-time">
+                    <span id="currentTime">0:00</span>
+                    <span id="duration">0:00</span>
+                </div>
+
+                <input
+                    type="range"
+                    id="seekBar"
+                    min="0"
+                    max="100"
+                    value="0"
+                >    
+            </div>
+
         </div>
 
     <script src="script.js"></script>
+
+    <audio id="explosionSound" src="sounds/explosion.mp3" preload="auto"></audio>
 </body>
 </html>
